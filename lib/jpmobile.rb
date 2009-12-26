@@ -16,14 +16,22 @@ module Jpmobile
     autoload :Emobile,   'jpmobile/mobile/emobile'
     autoload :Willcom,   'jpmobile/mobile/willcom'
     autoload :Ddipocket, 'jpmobile/mobile/willcom'
-
+    autoload :AAAYahoo,    'jpmobile/mobile/yahoo'
+    autoload :AAAGoogle,   'jpmobile/mobile/google'
+    autoload :AAALivedoor, 'jpmobile/mobile/livedoor'
+    autoload :AAAGoo,      'jpmobile/mobile/goo'
+    autoload :AAAFroute,   'jpmobile/mobile/froute'
+    autoload :AAAMoba,     'jpmobile/mobile/moba'
+    
     def self.carriers
-      @carriers ||= constants
+      @carriers ||= constants.sort
     end
 
     def self.carriers=(ary)
-      @carriers = ary
+      @carriers = ary.sort
     end
+
+    Rails.logger.debug "---mobile------ \n" + carriers.join(", ")
   end
 end
 
