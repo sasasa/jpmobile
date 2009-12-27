@@ -6,7 +6,7 @@ module Jpmobile::Mobile
     def initialize(request)
       @request = request
     end
-
+    PRIORITY = 1
     # 対応するuser-agentの正規表現
     USER_AGENT_REGEXP = nil
     # 対応するメールアドレスの正規表現
@@ -60,6 +60,10 @@ module Jpmobile::Mobile
       end
     end
 
+    def carrier_name
+      self.class.name.demodulize
+    end
+    
     private
     # リクエストのパラメータ。
     def params

@@ -2,8 +2,10 @@
 
 module Jpmobile::Mobile
   # ==Googleモバイルクローラー
-  class AAAGoogle < AbstractMobile
+  class Google < AbstractMobile
     autoload :IP_ADDRESSES, 'jpmobile/mobile/z_ip_addresses_google'
+
+    PRIORITY = 10 #誤認識されないよう優先度を上げておく
 
     USER_AGENT_REGEXP = %r{Googlebot-Mobile}
 

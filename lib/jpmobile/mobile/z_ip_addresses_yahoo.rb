@@ -4,7 +4,7 @@
 # 2009/12/25現在
 #:enddoc:
 
-Jpmobile::Mobile::AAAYahoo::IP_ADDRESSES = (
+Jpmobile::Mobile::Yahoo::IP_ADDRESSES = (
   [].tap{|ips| 146.upto(185){|n| ips << "124.83.159.#{n}/32" } } +
   [].tap{|ips| 224.upto(247){|n| ips << "124.83.159.#{n}/32" } }
 ).map {|ip| IPAddr.new(ip) }

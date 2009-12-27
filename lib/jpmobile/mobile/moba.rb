@@ -2,8 +2,10 @@
 
 module Jpmobile::Mobile
   # ==Mobaモバイルクローラー
-  class AAAMoba < AbstractMobile
+  class Moba < AbstractMobile
     autoload :IP_ADDRESSES, 'jpmobile/mobile/z_ip_addresses_moba'
+
+    PRIORITY = 10 #誤認識されないよう優先度を上げておく
 
     USER_AGENT_REGEXP = %r{moba-crawler}
 

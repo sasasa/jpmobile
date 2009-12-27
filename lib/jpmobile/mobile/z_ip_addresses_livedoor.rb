@@ -4,6 +4,6 @@
 # 2009/12/25現在
 #:enddoc:
 
-Jpmobile::Mobile::AAALivedoor::IP_ADDRESSES = %w(
+Jpmobile::Mobile::Livedoor::IP_ADDRESSES = %w(
 203.104.254.0/24
 ).map {|ip| IPAddr.new(ip) }

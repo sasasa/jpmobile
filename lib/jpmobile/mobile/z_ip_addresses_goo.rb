@@ -4,7 +4,7 @@
 # 2009/12/25現在
 #:enddoc:
 
-Jpmobile::Mobile::AAAGoo::IP_ADDRESSES = %w(
+Jpmobile::Mobile::Goo::IP_ADDRESSES = %w(
 210.150.10.32/27
 203.131.250.0/24
 203.131.251.0/24

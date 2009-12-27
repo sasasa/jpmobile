@@ -4,6 +4,6 @@
 # 2009/12/25現在
 #:enddoc:
 
-Jpmobile::Mobile::AAAFroute::IP_ADDRESSES = %w(
+Jpmobile::Mobile::Froute::IP_ADDRESSES = %w(
 60.43.36.253/32
 ).map {|ip| IPAddr.new(ip) }

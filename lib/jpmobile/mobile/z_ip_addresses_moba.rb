@@ -4,7 +4,7 @@
 # 2009/12/25現在
 #:enddoc:
 
-Jpmobile::Mobile::AAAMoba::IP_ADDRESSES = %w(
+Jpmobile::Mobile::Moba::IP_ADDRESSES = %w(
 202.238.103.126/32
 202.213.221.97/32
 ).map {|ip| IPAddr.new(ip) }

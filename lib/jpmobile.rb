@@ -16,19 +16,25 @@ module Jpmobile
     autoload :Emobile,   'jpmobile/mobile/emobile'
     autoload :Willcom,   'jpmobile/mobile/willcom'
     autoload :Ddipocket, 'jpmobile/mobile/willcom'
-    autoload :AAAYahoo,    'jpmobile/mobile/yahoo'
-    autoload :AAAGoogle,   'jpmobile/mobile/google'
-    autoload :AAALivedoor, 'jpmobile/mobile/livedoor'
-    autoload :AAAGoo,      'jpmobile/mobile/goo'
-    autoload :AAAFroute,   'jpmobile/mobile/froute'
-    autoload :AAAMoba,     'jpmobile/mobile/moba'
+    autoload :Yahoo,    'jpmobile/mobile/yahoo'
+    autoload :Google,   'jpmobile/mobile/google'
+    autoload :Livedoor, 'jpmobile/mobile/livedoor'
+    autoload :Goo,      'jpmobile/mobile/goo'
+    autoload :Froute,   'jpmobile/mobile/froute'
+    autoload :Moba,     'jpmobile/mobile/moba'
     
     def self.carriers
-      @carriers ||= constants.sort
+      @carriers ||= sorted_carriers(constants)
     end
 
     def self.carriers=(ary)
-      @carriers = ary.sort
+      @carriers = sorted_carriers(ary)
+    end
+
+    def self.sorted_carriers(array)
+      array.map{|name| "Jpmobile::Mobile::" + name }.
+            map(&:constantize).sort_by{|c| -c::PRIORITY }.
+            map(&:name).map(&:demodulize)
     end
 
     Rails.logger.debug "---mobile------ \n" + carriers.join(", ")

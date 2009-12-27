@@ -2,8 +2,10 @@
 
 module Jpmobile::Mobile
   # ==Yahooモバイルクローラー
-  class AAAYahoo < AbstractMobile
+  class Yahoo < AbstractMobile
     autoload :IP_ADDRESSES, 'jpmobile/mobile/z_ip_addresses_yahoo'
+    
+    PRIORITY = 10 #誤認識されないよう優先度を上げておく
 
     USER_AGENT_REGEXP = %r{Y!J-SRD/|Y!J-MBS/}
 

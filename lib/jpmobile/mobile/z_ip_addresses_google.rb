@@ -4,7 +4,7 @@
 # 2009/12/25現在
 #:enddoc:
 
-Jpmobile::Mobile::AAAGoogle::IP_ADDRESSES = %w(
+Jpmobile::Mobile::Google::IP_ADDRESSES = %w(
 72.14.199.0/25
 209.85.238.0/25
 ).map {|ip| IPAddr.new(ip) }
