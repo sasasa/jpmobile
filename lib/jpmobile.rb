@@ -14,8 +14,9 @@ module Jpmobile
     autoload :Vodafone,  'jpmobile/mobile/softbank'
     autoload :Jphone,    'jpmobile/mobile/softbank'
     autoload :Emobile,   'jpmobile/mobile/emobile'
-    autoload :Willcom,   'jpmobile/mobile/willcom'
     autoload :Ddipocket, 'jpmobile/mobile/willcom'
+    autoload :Willcom,   'jpmobile/mobile/willcom'
+    
     autoload :Yahoo,    'jpmobile/mobile/yahoo'
     autoload :Google,   'jpmobile/mobile/google'
     autoload :Livedoor, 'jpmobile/mobile/livedoor'

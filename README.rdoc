@@ -1,7 +1,8 @@
 = jpmobile: A Rails plugin for Japanese mobile-phones
 
 = 本家からの拡張部分
-モバイルクローラーの判定を追加 specはまだないです。
+
+==モバイルクローラーの判定を追加 specはまだないです。
 以下に対応
 * Yahoo
 * Google
@@ -9,6 +10,11 @@
 * Goo
 * Froute
 * Moba
+
+==session fixation対策を追加
+cookieが使えない端末で透過セッションを使用する際に呼ぶ必要がある
+ログイン時やログアウト時のリダイレクトのすぐ前で呼ぶ
+sessionやflashに値を入れる => request.regenerate_session => redirect_to
 
 == リンク
 * Project Website: http://jpmobile-rails.org
@@ -18,8 +24,7 @@
 * Mailing List: http://groups.google.com/group/jpmobile
 * IRC Channel #jpmobile@freenode.net
 
-== 作者
-
+== 本家の作者
 Copyright 2006 (c) Yohji Shidara, under MIT License.
 
 Yohji Shidara <dara@shidara.net>
