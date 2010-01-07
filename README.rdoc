@@ -17,16 +17,13 @@ cookieが使えない端末で透過セッションを使用する際に呼ぶ�
 sessionやflashに値を入れる => request.regenerate_session => redirect_to
 
 == リンク
-* Project Website: http://jpmobile-rails.org
-* RDoc Documentation: http://jpmobile.rubyforge.org/rdoc
-* GitHub: http://github.com/darashi/jpmobile/
-* RubyForge Project Page: http://rubyforge.org/projects/jpmobile
-* Mailing List: http://groups.google.com/group/jpmobile
-* IRC Channel #jpmobile@freenode.net
+
+* http://jpmobile-rails.org
+
 
 == 本家の作者
 Copyright 2006 (c) Yohji Shidara, under MIT License.
 
-Yohji Shidara <dara@shidara.net>
+Yoji Shidara <dara@shidara.net>
 
 http://d.hatena.ne.jp/darashi
