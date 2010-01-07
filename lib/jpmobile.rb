@@ -14,8 +14,8 @@ module Jpmobile
     autoload :Vodafone,  'jpmobile/mobile/softbank'
     autoload :Jphone,    'jpmobile/mobile/softbank'
     autoload :Emobile,   'jpmobile/mobile/emobile'
-    autoload :Ddipocket, 'jpmobile/mobile/willcom'
     autoload :Willcom,   'jpmobile/mobile/willcom'
+    autoload :Ddipocket, 'jpmobile/mobile/willcom'
     
     autoload :Yahoo,    'jpmobile/mobile/yahoo'
     autoload :Google,   'jpmobile/mobile/google'
@@ -33,9 +33,14 @@ module Jpmobile
     end
 
     def self.sorted_carriers(array)
-      array.map{|name| "Jpmobile::Mobile::" + name }.
-            map(&:constantize).sort_by{|c| -c::PRIORITY }.
-            map(&:name).map(&:demodulize)
+      array.map do |const_name|
+        begin
+          module_eval("Jpmobile::Mobile::" + const_name)
+        rescue
+          #retry
+          ("Jpmobile::Mobile::" + const_name).constantize
+        end
+      end.sort_by{|c| -c::PRIORITY }.map(&:name).map(&:demodulize)
     end
 
     Rails.logger.debug "---mobile------ \n" + carriers.join(", ")
